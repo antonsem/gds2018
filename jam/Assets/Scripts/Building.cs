@@ -7,11 +7,9 @@ public class Building : MonoBehaviour
 {
     bool Dragging = false;
 
-    public GameObject Player;
-
     public Texture2D DraggableObjectCursorIcon;
 
-    public Texture2D DefaulcCursorIcon;
+    public Texture2D DefaultCursorIcon;
 
     public int speed = 100;
 
@@ -19,11 +17,13 @@ public class Building : MonoBehaviour
 
     private PhysicalObject rigidbody2DComponent;
     private Gravity gravityComponent;
+    private GameObject Player;
 
     void Start()
     {
-        rigidbody2DComponent = this.gameObject.GetComponent<PhysicalObject>();
-        gravityComponent = this.gameObject.GetComponent<Gravity>();
+        rigidbody2DComponent = gameObject.GetComponent<PhysicalObject>();
+        gravityComponent = gameObject.GetComponent<Gravity>();
+        Player = GameObject.Find("Player");
     }
 
     void Update()
@@ -50,7 +50,7 @@ public class Building : MonoBehaviour
 
     private void OnMouseExit()
     {
-        Cursor.SetCursor(DefaulcCursorIcon, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(DefaultCursorIcon, Vector2.zero, CursorMode.Auto);
     }
 
     void OnMouseDown()
