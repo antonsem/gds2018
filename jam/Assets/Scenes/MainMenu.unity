@@ -743,6 +743,10 @@ PrefabInstance:
       propertyPath: levels.Array.data[1]
       value: Playground_2
       objectReference: {fileID: 0}
+    - target: {fileID: 368073717, guid: c85c1e03b868af4478338c97725e6e7a, type: 3}
+      propertyPath: levels.Array.data[0]
+      value: Level_1_Learning_the_Ropes
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c85c1e03b868af4478338c97725e6e7a, type: 3}
 --- !u!1 &639045355
@@ -992,7 +996,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 5000
+  far clip plane: 15
   field of view: 40
   orthographic: 0
   orthographic size: 5
@@ -1018,8 +1022,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763901188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2724671, y: -0.47604015, z: -1.6995025}
+  m_LocalRotation: {x: -0.012086171, y: 0, z: 0, w: 0.99992704}
+  m_LocalPosition: {x: 0, y: 4.7582946, z: -9.997079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
