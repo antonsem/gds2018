@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class LevelCompletePanel : MonoBehaviour
 {
@@ -9,6 +10,18 @@ public class LevelCompletePanel : MonoBehaviour
     private Button next;
     [SerializeField]
     private Button mainMenu;
+    [SerializeField]
+    private VideoPlayer video;
+
+    private void OnEnable()
+    {
+        video.Play();
+    }
+
+    private void OnDisable()
+    {
+        video.Pause();
+    }
 
     private void Start()
     {

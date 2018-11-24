@@ -26,6 +26,8 @@ public class UIManager : Singleton<UIManager>
     private GameOverPanel gameOverPanel;
     [SerializeField]
     private LevelCompletePanel levelCompletePanel;
+    [SerializeField]
+    private FadePanel fadePanel;
 
     private void SetCurrentLevel(LevelStateController level)
     {
@@ -34,23 +36,20 @@ public class UIManager : Singleton<UIManager>
 
     public void FadeOut(Action callback)
     {
-        SetPanel(Panel.Fade);
-        StartCoroutine(FadeOutCoroutine(callback));
+        fadePanel.FadeOut(() =>
+        {
+            if (callback != null)
+                callback.Invoke();
+            SetPanel(Panel.None);
+        });
     }
 
     public void FadeIn(Action callback)
     {
-        StartCoroutine(FadeInCoroutine(callback));
+        fadePanel.FadeIn(callback);
     }
 
     private IEnumerator FadeInCoroutine(Action callback)
-    {
-        yield return null;
-        if (callback != null)
-            callback.Invoke();
-    }
-
-    private IEnumerator FadeOutCoroutine(Action callback)
     {
         yield return null;
         if (callback != null)
@@ -101,6 +100,7 @@ public class UIManager : Singleton<UIManager>
         mainMenuPanel = FindObjectOfType<MainMenuPanel>();
         gameOverPanel = FindObjectOfType<GameOverPanel>();
         levelCompletePanel = FindObjectOfType<LevelCompletePanel>();
+        fadePanel = FindObjectOfType<FadePanel>();
     }
 
     private void OnApplicationQuit()

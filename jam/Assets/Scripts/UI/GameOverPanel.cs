@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class GameOverPanel : MonoBehaviour
 {
@@ -9,11 +10,23 @@ public class GameOverPanel : MonoBehaviour
     private Button restart;
     [SerializeField]
     private Button mainMenu;
+    [SerializeField]
+    private VideoPlayer video;
 
     private void Awake()
     {
         mainMenu.onClick.AddListener(OnMainMenu);
         restart.onClick.AddListener(OnRestart);
+    }
+
+    private void OnEnable()
+    {
+        video.Play();
+    }
+
+    private void OnDisable()
+    {
+        video.Pause();
     }
 
     private void OnRestart()
