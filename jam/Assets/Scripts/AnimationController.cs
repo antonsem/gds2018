@@ -9,7 +9,6 @@ public class AnimationController : MonoBehaviour
     private int fallSpeed = Animator.StringToHash("Fall");
     private int walkSpeed = Animator.StringToHash("Walk");
     private int jump = Animator.StringToHash("Jump");
-    private int land = Animator.StringToHash("Landed");
     private int hang = Animator.StringToHash("Hang");
     [SerializeField]
     private Animator anim;

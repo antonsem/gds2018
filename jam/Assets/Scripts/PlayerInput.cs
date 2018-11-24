@@ -165,6 +165,8 @@ public class PlayerInput : MonoBehaviour, IUpdate
             else
                 inputLock -= Time.deltaTime;
         }
+
+        SetAnimations();
     }
 
     private void SetAnimations()
