@@ -18,6 +18,8 @@ public class DeathManager : MonoBehaviour
     private Gravity gravity;
     [SerializeField]
     private PlayerInput input;
+    [SerializeField]
+    private GameObject blood;
 
     private void OnEnable()
     {
@@ -54,6 +56,8 @@ public class DeathManager : MonoBehaviour
         switch (type)
         {
             case (DeathType.Explode):
+                blood.transform.SetParent(null);
+                blood.SetActive(true);
                 gameObject.SetActive(false);
                 Debug.Log("Exploded!");
                 break;
