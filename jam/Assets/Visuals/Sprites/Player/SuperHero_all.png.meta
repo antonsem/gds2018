@@ -21,6 +21,18 @@ TextureImporter:
     21300032: SuperHero_all_16
     21300034: SuperHero_all_17
     21300036: SuperHero_all_18
+    21300038: SuperHero_all_19
+    21300040: SuperHero_all_20
+    21300042: SuperHero_all_21
+    21300044: SuperHero_all_22
+    21300046: SuperHero_all_23
+    21300048: SuperHero_all_24
+    21300050: SuperHero_all_25
+    21300052: SuperHero_all_26
+    21300054: SuperHero_all_27
+    21300056: SuperHero_all_28
+    21300058: SuperHero_all_29
+    21300060: SuperHero_all_30
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -111,13 +123,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd760bd21df62ac449670599d79d9ee6
+      spriteID: 0a21efee9e19410488eaf88a5f4dafe6
       vertices: []
       indices: 
       edges: []
@@ -131,13 +143,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 342df4c7e7d2cbe4c9a5e4b37e812b8a
+      spriteID: 62e50af62e93540489f8c73a9642bcbd
       vertices: []
       indices: 
       edges: []
@@ -151,13 +163,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7960854ea5c68a44784d568fbb39b0bc
+      spriteID: 2d55268689c10164ab25791f913379f6
       vertices: []
       indices: 
       edges: []
@@ -171,13 +183,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21453a6005d17b94b99192d4530c066a
+      spriteID: 3e7fd2edae23a374c8cfac7f5c5beeb1
       vertices: []
       indices: 
       edges: []
@@ -191,13 +203,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ab0b1a00bd820a47874a44b6efb1a5d
+      spriteID: 240547d7e1c974549bd6beaf9777eafe
       vertices: []
       indices: 
       edges: []
@@ -211,13 +223,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8531863841bcccf4395396874f95a49c
+      spriteID: f2a666d9319e524449ffb2ccd9fb6e0a
       vertices: []
       indices: 
       edges: []
@@ -231,13 +243,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24503051bb91fb84a916ecfc0143b95d
+      spriteID: b5eea5f2f02b7a147bfb11628f870f9f
       vertices: []
       indices: 
       edges: []
@@ -246,18 +258,18 @@ TextureImporter:
       name: SuperHero_all_7
       rect:
         serializedVersion: 2
-        x: 512
-        y: 640
+        x: 0
+        y: 512
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dfad58296aced54fbf612137581cd71
+      spriteID: ddc20b1d3e873e849bb803a3a068efc5
       vertices: []
       indices: 
       edges: []
@@ -266,18 +278,18 @@ TextureImporter:
       name: SuperHero_all_8
       rect:
         serializedVersion: 2
-        x: 640
-        y: 640
+        x: 128
+        y: 512
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 814b886d855d45f469a5bc0adf631145
+      spriteID: e5e2f59c42017694fb235563a68dd4d2
       vertices: []
       indices: 
       edges: []
@@ -286,18 +298,18 @@ TextureImporter:
       name: SuperHero_all_9
       rect:
         serializedVersion: 2
-        x: 768
-        y: 640
+        x: 256
+        y: 512
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b5f99c8f0cdd314f8f2e6d129ff5d04
+      spriteID: f2a50bdb329b965469db68ec91b30e1a
       vertices: []
       indices: 
       edges: []
@@ -306,18 +318,18 @@ TextureImporter:
       name: SuperHero_all_10
       rect:
         serializedVersion: 2
-        x: 896
-        y: 640
+        x: 384
+        y: 512
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fa8e852297e53341af870baae130a06
+      spriteID: 783247554d54b3a4191ae6aa3399e37c
       vertices: []
       indices: 
       edges: []
@@ -326,18 +338,18 @@ TextureImporter:
       name: SuperHero_all_11
       rect:
         serializedVersion: 2
-        x: 0
+        x: 512
         y: 512
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3789fc4ec1794844a94d59beb405594
+      spriteID: e12cd2542aa700949a66c75cb7576bd9
       vertices: []
       indices: 
       edges: []
@@ -346,18 +358,18 @@ TextureImporter:
       name: SuperHero_all_12
       rect:
         serializedVersion: 2
-        x: 128
-        y: 512
+        x: 0
+        y: 384
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8c38ed6b47d30e418231a75d87086ea
+      spriteID: 0c8ffb51856059c46a0e408c63d7f1cb
       vertices: []
       indices: 
       edges: []
@@ -366,18 +378,18 @@ TextureImporter:
       name: SuperHero_all_13
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
+        x: 128
+        y: 384
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2df25e7c92368b4aa68129ae259adc0
+      spriteID: 1a91cdea6b848aa45b60d5810c1085cc
       vertices: []
       indices: 
       edges: []
@@ -386,18 +398,18 @@ TextureImporter:
       name: SuperHero_all_14
       rect:
         serializedVersion: 2
-        x: 384
-        y: 512
+        x: 256
+        y: 384
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9292bd633d7c7047902508c6228e4a1
+      spriteID: 271b54d500764fc4691632396cf2910a
       vertices: []
       indices: 
       edges: []
@@ -406,18 +418,18 @@ TextureImporter:
       name: SuperHero_all_15
       rect:
         serializedVersion: 2
-        x: 0
+        x: 384
         y: 384
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ad2bf8c12ee70143a888989699f111e
+      spriteID: f393b689f685ac447b37143bcd2586e7
       vertices: []
       indices: 
       edges: []
@@ -426,18 +438,18 @@ TextureImporter:
       name: SuperHero_all_16
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
+        x: 0
+        y: 256
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fad971cd42751bc42949ec4a49aa263a
+      spriteID: b64c67c6183a46746a5a69a5f9f10595
       vertices: []
       indices: 
       edges: []
@@ -446,18 +458,18 @@ TextureImporter:
       name: SuperHero_all_17
       rect:
         serializedVersion: 2
-        x: 256
-        y: 384
+        x: 128
+        y: 256
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0c352f085de3e14390da3e782acf482
+      spriteID: 13dc71daa15b8fa4783609d8ad757582
       vertices: []
       indices: 
       edges: []
@@ -466,18 +478,78 @@ TextureImporter:
       name: SuperHero_all_18
       rect:
         serializedVersion: 2
-        x: 384
-        y: 384
+        x: 256
+        y: 256
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8d66b52a6778824091f7262fc90fb3c
+      spriteID: 342b91facbf2d34448dc449bf89b4ac8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperHero_all_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f828344fc181e284387a20f0f488b332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperHero_all_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71746c2016d4c6c4d9a37e5f328053f5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperHero_all_21
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206845e0e80866a45a7d974d50520aa4
       vertices: []
       indices: 
       edges: []
