@@ -15,6 +15,7 @@ public class LevelStateController : MonoBehaviour
 
     protected virtual void OnEnable()
     {
+        UIManager.Instance.SetPanel(Panel.None);
         Events.Instance.levelLoaded.Invoke(this);
         AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage * musicVolPercentage);
         AudioManager.Instance.SetNormalizedSFXVolume(Settings.sfxVolPercentage * sfxVolPercentage);
@@ -24,6 +25,7 @@ public class LevelStateController : MonoBehaviour
     {
         if (!quitting)
         {
+            Events.Instance.levelLoaded.Invoke(null);
             AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage);
             AudioManager.Instance.SetNormalizedSFXVolume(Settings.sfxVolPercentage);
         }

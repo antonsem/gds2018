@@ -12,17 +12,47 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField]
     private string mainSceneName;
     private Scene loadedScene;
+    public LevelStateController currentLevel;
+
+    private bool quitting = false;
 
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
+        Events.Instance.levelLoaded.AddListener(SetCurrentLevel);
     }
 
     private void OnDisable()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        if (!quitting)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            SceneManager.sceneUnloaded -= OnSceneUnloaded;
+            Events.Instance.levelLoaded.RemoveListener(SetCurrentLevel);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        quitting = true;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && currentLevel)
+            ReloadLevel(() => UIManager.Instance.FadeIn(null), null);
+    }
+
+    private void SetCurrentLevel(LevelStateController level)
+    {
+        currentLevel = level;
+    }
+
+    public void LoadNext()
+    {
+        LoadLevel(currentLevel.nextLevelName,
+            () => UIManager.Instance.FadeIn(null), null);
     }
 
     public void LoadMainScene(Action unloadCallback)

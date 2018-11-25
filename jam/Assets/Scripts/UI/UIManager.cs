@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public enum Panel
 {
@@ -18,7 +20,6 @@ public enum Panel
 
 public class UIManager : Singleton<UIManager>
 {
-    public LevelStateController currentLevel;
     private bool quitting = false;
     [SerializeField]
     private Panel defaultPanel = Panel.MainMenu;
@@ -35,9 +36,28 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private CreditsPanel creditsPanel;
 
-    private void SetCurrentLevel(LevelStateController level)
+    public Selectable currentButton;
+    private Panel currentPanel = Panel.None;
+
+    private EventSystem _sys;
+    public EventSystem sys
     {
-        currentLevel = level;
+        get
+        {
+            if (!_sys)
+                _sys = EventSystem.current;
+            return _sys;
+        }
+    }
+
+    private IEnumerator Enable()
+    {
+        yield return new WaitForEndOfFrame();
+        currentButton = FindObjectOfType<Button>();
+        if (currentButton)
+            currentButton.Select();
+        else
+            Debug.LogError("Couldn't find a button, do you need it?");
     }
 
     public void FadeOut(Action callback)
@@ -69,6 +89,8 @@ public class UIManager : Singleton<UIManager>
         levelCompletePanel.gameObject.SetActive(type == Panel.LevelCompleted);
         optionsPanel.gameObject.SetActive(type == Panel.Options);
         creditsPanel.gameObject.SetActive(type == Panel.Credits);
+
+        currentPanel = type;
     }
 
     private void LevelFailed()
@@ -88,7 +110,6 @@ public class UIManager : Singleton<UIManager>
 
     private void OnEnable()
     {
-        Events.Instance.levelLoaded.AddListener(SetCurrentLevel);
         Events.Instance.levelCompleted.AddListener(LevelCompleted);
         Events.Instance.levelFailed.AddListener(LevelFailed);
     }
@@ -97,7 +118,6 @@ public class UIManager : Singleton<UIManager>
     {
         if (!quitting)
         {
-            Events.Instance.levelLoaded.RemoveListener(SetCurrentLevel);
             Events.Instance.levelCompleted.AddListener(LevelCompleted);
             Events.Instance.levelFailed.AddListener(LevelFailed);
         }
@@ -116,5 +136,18 @@ public class UIManager : Singleton<UIManager>
     private void OnApplicationQuit()
     {
         quitting = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (!sys.currentSelectedGameObject || !sys.currentSelectedGameObject.activeInHierarchy)
+        {
+            if (currentPanel == Panel.MainMenu || currentPanel == Panel.Credits
+                || currentPanel == Panel.GameOver || currentPanel == Panel.LevelCompleted
+                || currentPanel == Panel.Options)
+            {
+                StartCoroutine(Enable());
+            }
+        }
     }
 }

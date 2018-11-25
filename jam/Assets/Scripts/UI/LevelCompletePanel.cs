@@ -33,13 +33,7 @@ public class LevelCompletePanel : MonoBehaviour
 
     private void OnNext()
     {
-        UIManager.Instance.FadeOut(LoadNext);
-    }
-
-    private void LoadNext()
-    {
-        LevelManager.Instance.LoadLevel(UIManager.Instance.currentLevel.nextLevelName,
-            () => UIManager.Instance.FadeIn(null), null);
+        UIManager.Instance.FadeOut(LevelManager.Instance.LoadNext);
     }
 
     private void OnMainMenu()
