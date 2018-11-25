@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class LevelStateController : MonoBehaviour
 {
     public float musicVolPercentage = 0.6f;
     public float sfxVolPercentage = 1f;
+    public VideoClip clip;
     public string levelName;
     public string nextLevelName;
     [TextArea(10, 100)]

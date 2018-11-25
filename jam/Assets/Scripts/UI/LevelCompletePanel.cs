@@ -15,6 +15,8 @@ public class LevelCompletePanel : MonoBehaviour
 
     private void OnEnable()
     {
+        if (LevelManager.Instance.currentLevel && LevelManager.Instance.currentLevel.clip)
+            video.clip = LevelManager.Instance.currentLevel.clip;
         video.Play();
         AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage);
         AudioManager.Instance.SetNormalizedSFXVolume(0);
