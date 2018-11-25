@@ -12,6 +12,7 @@ public class AnimationController : MonoBehaviour
     private int hang = Animator.StringToHash("Hang");
     private int explode = Animator.StringToHash("Explode");
     private int hang_death = Animator.StringToHash("Hang_Death");
+    private int electricuted = Animator.StringToHash("Electricuted");
     [SerializeField]
     private Animator anim;
 
@@ -66,6 +67,11 @@ public class AnimationController : MonoBehaviour
     public void SetHang_Death()
     {
         anim.SetTrigger(hang_death);
+    }
+
+    public void SetElectricuted()
+    {
+        anim.SetTrigger(electricuted);
     }
 
     private void Reset()

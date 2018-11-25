@@ -14,6 +14,10 @@ public class PlayerAudioController : MonoBehaviour
     private AudioClip[] lands;
     [SerializeField]
     private AudioClip[] explosions;
+    [SerializeField]
+    private AudioClip[] electricutions;
+    [SerializeField]
+    private AudioClip[] screams;
 
     public void PlayFootStep()
     {
@@ -25,6 +29,11 @@ public class PlayerAudioController : MonoBehaviour
         PlayFromList(explosions);
     }
 
+    public void PlayElectricutions()
+    {
+        PlayFromList(electricutions);
+    }
+
     public void PlayJump()
     {
         PlayFromList(jumps);
@@ -33,6 +42,11 @@ public class PlayerAudioController : MonoBehaviour
     public void PlayLand()
     {
         PlayFromList(lands);
+    }
+
+    public void PlayScream()
+    {
+        PlayFromList(screams);
     }
 
     public void PlayFromList(AudioClip[] list, float minPitch = 0.95f, float maxPitch = 1.05f)

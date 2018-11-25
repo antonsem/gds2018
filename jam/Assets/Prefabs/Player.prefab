@@ -622,6 +622,7 @@ MonoBehaviour:
   teleporterVerticalThrow: 0.5
   edgeGrab: 1
   wallSlide: 1
+  Dashable: 0
   physObj: {fileID: 8640666231237155415}
   gravity: {fileID: 8640666231237155411}
   anim: {fileID: 5311229844377231617}
@@ -696,6 +697,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0bf10fc0d19c8a240aeb8522492ea553, type: 3}
   explosions:
   - {fileID: 8300000, guid: fe471d37dcf658043b9ee4c5e8857380, type: 3}
+  electricutions:
+  - {fileID: 8300000, guid: 3d7b80e5af33af34488e21b58c8bc40d, type: 3}
+  screams:
+  - {fileID: 8300000, guid: af10bcd52b28cdc498b58ad6f9535a84, type: 3}
+  - {fileID: 8300000, guid: 5fff7fc2711a54a42841c196d3cfe97f, type: 3}
 --- !u!1 &8640666231245616862
 GameObject:
   m_ObjectHideFlags: 0
