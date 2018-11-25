@@ -62,6 +62,6 @@ public class hanging_station : MonoBehaviour
         player.GetComponent<Animator>().enabled = true;
         Events.Instance.playerDied.Invoke(DeathType.Hang);
         yield return new WaitForSeconds(5);
-        LevelManager.Instance.LoadMainScene(() => UIManager.Instance.SetPanel(Panel.Credits));
+        UIManager.Instance.FadeOut(() => LevelManager.Instance.LoadMainScene(() => UIManager.Instance.FadeIn(() => UIManager.Instance.SetPanel(Panel.Credits))));
     }
 }
