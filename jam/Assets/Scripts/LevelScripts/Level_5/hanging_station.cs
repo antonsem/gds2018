@@ -25,7 +25,7 @@ public class hanging_station : MonoBehaviour
             Destroy(ground);
             AllowPlayerToHang();
             StartCoroutine(StartDying());
-            StartCoroutine(CompleteLevel());
+            //StartCoroutine(CompleteLevel());
         }
     }
 
@@ -56,7 +56,10 @@ public class hanging_station : MonoBehaviour
 
     IEnumerator StartDying()
     {
+        player.GetComponent<Animator>().enabled = false;
+        player.GetComponent<PhysicalObject>().enabled = false;
         yield return new WaitForSeconds(0.95f);
+        player.GetComponent<Animator>().enabled = true;
         Events.Instance.playerDied.Invoke(DeathType.Hang);
     }
 }
