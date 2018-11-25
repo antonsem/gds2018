@@ -10,6 +10,8 @@ public class AnimationController : MonoBehaviour
     private int walkSpeed = Animator.StringToHash("Walk");
     private int jump = Animator.StringToHash("Jump");
     private int hang = Animator.StringToHash("Hang");
+    private int explode = Animator.StringToHash("Explode");
+    private int hang_death = Animator.StringToHash("Hang_Death");
     [SerializeField]
     private Animator anim;
 
@@ -54,6 +56,16 @@ public class AnimationController : MonoBehaviour
             hanging = val;
             anim.SetBool(hang, val);
         }
+    }
+
+    public void SetExplode()
+    {
+        anim.SetTrigger(explode);
+    }
+
+    public void SetHang_Death()
+    {
+        anim.SetTrigger(hang_death);
     }
 
     private void Reset()

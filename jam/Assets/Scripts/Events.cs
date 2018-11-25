@@ -23,4 +23,5 @@ public class Events : Singleton<Events>
     public LevelStateEventEmmiter levelLoaded = new LevelStateEventEmmiter();
     public EventEmmiter levelFailed = new EventEmmiter();
     public EventEmmiter levelCompleted = new EventEmmiter();
+    public EventEmmiter shakeCamera = new EventEmmiter();
 }

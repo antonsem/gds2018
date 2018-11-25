@@ -16,6 +16,7 @@ public class LevelCompletePanel : MonoBehaviour
     private void OnEnable()
     {
         video.Play();
+        AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage);
     }
 
     private void OnDisable()

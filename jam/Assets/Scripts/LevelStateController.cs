@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class LevelStateController : MonoBehaviour
 {
+    public float musicVolPercentage = 0.25f;
     public string levelName;
-    public string tip;
     public string nextLevelName;
+    [TextArea(10, 100)]
+    public string tip;
+
+    private bool quitting = false;
 
     protected virtual void OnEnable()
     {
         Events.Instance.levelLoaded.Invoke(this);
+        AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage * musicVolPercentage);
+    }
+
+    protected virtual void OnDisable()
+    {
+        if (!quitting)
+            AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage);
+    }
+
+    private void OnApplicationQuit()
+    {
+        quitting = true;
     }
 
     private void Update()
