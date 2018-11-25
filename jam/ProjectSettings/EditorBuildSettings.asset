@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_1_Learning_the_Ropes.unity
     guid: 08d265462a0ae684c8540ab6b86fcd5c
+  - enabled: 1
+    path: Assets/Scenes/Level_3_Death_is_My_Friend.unity
+    guid: 2d878ec06410cc846876c84082e44723
   m_configObjects: {}
