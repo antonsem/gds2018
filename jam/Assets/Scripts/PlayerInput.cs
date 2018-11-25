@@ -81,7 +81,7 @@ public class PlayerInput : MonoBehaviour, IUpdate
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
-            if (--jumpCount >= 0 || physObj.isGrounded || isHooked)
+            if (--jumpCount >= 1 || physObj.isGrounded || isHooked)
             {
                 physObj.velocity.y = jumpSpeed;
                 audio.PlayJump();
