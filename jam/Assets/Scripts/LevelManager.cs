@@ -14,6 +14,8 @@ public class LevelManager : Singleton<LevelManager>
     private Scene loadedScene;
     public LevelStateController currentLevel;
 
+    private IEnumerator restart;
+
     private bool quitting = false;
 
     private void OnEnable()
@@ -42,9 +44,18 @@ public class LevelManager : Singleton<LevelManager>
     {
         if (Input.GetKeyDown(KeyCode.R) && currentLevel)
         {
-            Events.Instance.playerDied.Invoke(DeathType.Explode);
-            ReloadLevel(() => UIManager.Instance.FadeIn(null), null);
+            if (restart != null) return;
+            restart = RestartCoroutine();
+            StartCoroutine(restart);
         }
+    }
+
+    private IEnumerator RestartCoroutine()
+    {
+            Events.Instance.playerDied.Invoke(DeathType.Explode);
+        yield return new WaitForSeconds(2);
+            ReloadLevel(() => UIManager.Instance.FadeIn(null), null);
+        restart = null;
     }
 
     private void SetCurrentLevel(LevelStateController level)

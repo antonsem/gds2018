@@ -20,7 +20,7 @@ public class Log_tween : MonoBehaviour
         gameObject.Tween("ScaleLogs", currentScale, startScale, 1.25f, TweenScaleFunctions.CubicEaseIn, (t) =>
         {
             // progress
-            if (t != null)
+            if (t != null && transform != null)
                 transform.localScale = t.CurrentValue;
         }, (t) =>
         {
