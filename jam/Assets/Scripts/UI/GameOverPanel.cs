@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -12,6 +13,10 @@ public class GameOverPanel : MonoBehaviour
     private Button mainMenu;
     [SerializeField]
     private VideoPlayer video;
+    [SerializeField]
+    private TextMeshProUGUI levelName;
+    [SerializeField]
+    private TextMeshProUGUI tip;
 
     private void Awake()
     {
@@ -21,7 +26,13 @@ public class GameOverPanel : MonoBehaviour
 
     private void OnEnable()
     {
+        if (UIManager.Instance.currentLevel)
+        {
+            levelName.text = UIManager.Instance.currentLevel.levelName;
+            tip.text = UIManager.Instance.currentLevel.tip;
+        }
         video.Play();
+        AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage);
     }
 
     private void OnDisable()

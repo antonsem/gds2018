@@ -1,3 +1,4 @@
+using ExtraTools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine;
 public enum DeathType
 {
     Explode,
-    Impale
+    Impale,
+    Hang
 }
 
 public class DeathManager : MonoBehaviour
@@ -20,6 +22,12 @@ public class DeathManager : MonoBehaviour
     private PlayerInput input;
     [SerializeField]
     private GameObject blood;
+    [SerializeField]
+    private GameObject head;
+    [SerializeField]
+    private GameObject audioSource;
+    [SerializeField]
+    private AnimationController anim;
 
     private void OnEnable()
     {
@@ -48,6 +56,8 @@ public class DeathManager : MonoBehaviour
             Events.Instance.playerDied.Invoke(DeathType.Explode);
         if (Input.GetKeyDown(KeyCode.Alpha2))
             Events.Instance.playerDied.Invoke(DeathType.Impale);
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            Events.Instance.playerDied.Invoke(DeathType.Hang);
     }
 #endif
 
@@ -56,9 +66,7 @@ public class DeathManager : MonoBehaviour
         switch (type)
         {
             case (DeathType.Explode):
-                blood.transform.SetParent(null);
-                blood.SetActive(true);
-                gameObject.SetActive(false);
+                anim.SetExplode();
                 Debug.Log("Exploded!");
                 break;
             case (DeathType.Impale):
@@ -67,10 +75,30 @@ public class DeathManager : MonoBehaviour
                 input.enabled = false;
                 Debug.Log("Impaled");
                 break;
+            case (DeathType.Hang):
+                anim.SetHang_Death();
+                DoHang();
+                break;
             default:
                 Debug.Log("Exploded!");
                 break;
         }
         Debug.Log(string.Format("Player died because of {0}", type.ToString()));
+    }
+
+    public void DoExplode()
+    {
+        Events.Instance.shakeCamera.Invoke();
+        audioSource.transform.SetParent(null);
+        blood.transform.SetParent(null);
+        blood.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
+    public void DoHang()
+    {
+        head.SetActive(true);
+        if(head.transform.SetComponent(out Rigidbody2D rigid))
+            rigid.angularVelocity = Random.Range(-180, 180);
     }
 }
