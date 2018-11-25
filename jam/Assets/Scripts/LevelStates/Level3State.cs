@@ -38,7 +38,7 @@ public class Level3State : LevelStateController
                 Events.Instance.levelCompleted.Invoke();
             }
             
-            if(virtualCamera.m_Lens.FieldOfView > 40)
+            if(virtualCamera.m_Lens.FieldOfView > 30)
             {
                 virtualCamera.m_Lens.FieldOfView -= 0.1f;
             }
