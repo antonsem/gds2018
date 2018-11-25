@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelStateController : MonoBehaviour
 {
     public float musicVolPercentage = 0.6f;
+    public float sfxVolPercentage = 1f;
     public string levelName;
     public string nextLevelName;
     [TextArea(10, 100)]
@@ -16,12 +17,16 @@ public class LevelStateController : MonoBehaviour
     {
         Events.Instance.levelLoaded.Invoke(this);
         AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage * musicVolPercentage);
+        AudioManager.Instance.SetNormalizedSFXVolume(Settings.sfxVolPercentage * sfxVolPercentage);
     }
 
     protected virtual void OnDisable()
     {
         if (!quitting)
+        {
             AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage);
+            AudioManager.Instance.SetNormalizedSFXVolume(Settings.sfxVolPercentage);
+        }
     }
 
     private void OnApplicationQuit()
