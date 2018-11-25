@@ -90,9 +90,7 @@ public class DeathManager : MonoBehaviour
                 Debug.Log("Exploded!");
                 break;
             case (DeathType.Impale):
-                phys.enabled = false;
-                gravity.enabled = false;
-                input.enabled = false;
+                anim.SetImpaled();
                 Debug.Log("Impaled");
                 break;
             case (DeathType.Hang):
@@ -128,7 +126,6 @@ public class DeathManager : MonoBehaviour
         head.SetActive(true);
         if (head.transform.SetComponent(out Rigidbody2D rigid))
             rigid.AddForce(new Vector2(Random.Range(-100, 100), 0));
-        //rigid.angularVelocity = Random.Range(-180, 180);
     }
 
     public void DoTrip()
