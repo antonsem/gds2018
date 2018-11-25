@@ -40,7 +40,7 @@ public class UpdateManager : Singleton<UpdateManager>
         }
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         for (int i = 0; i < updates.Count; i++)
         {

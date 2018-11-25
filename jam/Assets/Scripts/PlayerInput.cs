@@ -57,7 +57,7 @@ public class PlayerInput : MonoBehaviour, IUpdate
 
         speed += (maxSpeed - speed) / maxSpeed / 2;
         speed = Mathf.Min(maxSpeed, speed);
-        horizontalInput = Input.GetAxisRaw("Horizontal") * Mathf.Min(maxSpeed, speed) * Time.deltaTime;
+        horizontalInput = Input.GetAxisRaw("Horizontal") * Mathf.Min(maxSpeed, speed) * Time.fixedDeltaTime;
         verticalInput = Input.GetAxisRaw("Vertical");
         if (inputLock > 0) return;
 
