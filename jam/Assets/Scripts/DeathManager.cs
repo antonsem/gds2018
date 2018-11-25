@@ -8,7 +8,8 @@ public enum DeathType
     Explode,
     Impale,
     Hang,
-    Electricuted
+    Electricuted,
+    Tripped
 }
 
 public class DeathManager : MonoBehaviour
@@ -29,6 +30,11 @@ public class DeathManager : MonoBehaviour
     private GameObject audioSource;
     [SerializeField]
     private AnimationController anim;
+    [SerializeField]
+    private Transform headPos;
+
+    private bool died = false;
+    private bool hanged = false;
 
     private void OnEnable()
     {
@@ -61,11 +67,22 @@ public class DeathManager : MonoBehaviour
             Events.Instance.playerDied.Invoke(DeathType.Hang);
         if (Input.GetKeyDown(KeyCode.Alpha4))
             Events.Instance.playerDied.Invoke(DeathType.Electricuted);
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+            Events.Instance.playerDied.Invoke(DeathType.Tripped);
+
+        //if (hanged && head.transform.SetComponent(out Rigidbody2D rigid))
+        //{
+        //    rigid.AddForce(new Vector2(100, 100));
+        //    Debug.Log("Hanged!");
+        //    hanged = died = true;
+        //}
     }
 #endif
 
     private void Death(DeathType type)
     {
+        died = true;
+
         switch (type)
         {
             case (DeathType.Explode):
@@ -85,6 +102,9 @@ public class DeathManager : MonoBehaviour
             case (DeathType.Electricuted):
                 anim.SetElectricuted();
                 break;
+            case (DeathType.Tripped):
+                anim.SetTrip();
+                break;
             default:
                 Debug.Log("Exploded!");
                 break;
@@ -103,8 +123,18 @@ public class DeathManager : MonoBehaviour
 
     public void DoHang()
     {
+        if (hanged) return;
+        hanged = true;
         head.SetActive(true);
-        if(head.transform.SetComponent(out Rigidbody2D rigid))
-            rigid.angularVelocity = Random.Range(-180, 180);
+        if (head.transform.SetComponent(out Rigidbody2D rigid))
+            rigid.AddForce(new Vector2(Random.Range(-100, 100), 0));
+        //rigid.angularVelocity = Random.Range(-180, 180);
+    }
+
+    public void DoTrip()
+    {
+        Events.Instance.shakeCamera.Invoke();
+        head.transform.position = headPos.position;
+        DoHang();
     }
 }
