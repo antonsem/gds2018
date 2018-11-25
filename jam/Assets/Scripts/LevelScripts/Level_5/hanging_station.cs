@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class hanging_station : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,5 +61,7 @@ public class hanging_station : MonoBehaviour
         yield return new WaitForSeconds(0.95f);
         player.GetComponent<Animator>().enabled = true;
         Events.Instance.playerDied.Invoke(DeathType.Hang);
+        yield return new WaitForSeconds(5);
+        LevelManager.Instance.LoadMainScene(() => UIManager.Instance.SetPanel(Panel.Credits));
     }
 }

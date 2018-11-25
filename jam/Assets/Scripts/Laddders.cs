@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,22 +6,22 @@ public class Laddders : MonoBehaviour
 {
     private bool Inledder;
 
-    private GameObject player;
+    private PlayerInput player;
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = FindObjectOfType<PlayerInput>();
     }
 
     void Update()
     {
         if (Inledder)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetAxisRaw("Vertical") > 0)
             {
                 player.GetComponent<PhysicalObject>().velocity.y = 0.1f;
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetAxisRaw("Vertical") < 0)
             {
                 player.GetComponent<PhysicalObject>().velocity.y = -0.1f;
             }
@@ -35,12 +35,12 @@ public class Laddders : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Inledder = true;
-        player.GetComponent<AnimationController>().SetJump(true);
+        player.climbLadder = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         Inledder = false;
-        player.GetComponent<AnimationController>().SetJump(false);
+        player.climbLadder = false;
     }
 }

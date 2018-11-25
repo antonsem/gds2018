@@ -1,4 +1,4 @@
-﻿using DigitalRuby.Tween;
+using DigitalRuby.Tween;
 using UnityEngine;
 
 public class Log_tween : MonoBehaviour
@@ -20,19 +20,21 @@ public class Log_tween : MonoBehaviour
         gameObject.Tween("ScaleLogs", currentScale, startScale, 1.25f, TweenScaleFunctions.CubicEaseIn, (t) =>
         {
             // progress
-            transform.localScale = t.CurrentValue;
+            if (t != null)
+                transform.localScale = t.CurrentValue;
         }, (t) =>
         {
             // completion
             gameObject.Tween("ScaleLogs", startScale, endScale, 1.25f, TweenScaleFunctions.Linear, (t2) =>
             {
                 // progress
-                transform.localScale = t2.CurrentValue;
+                if (t2 != null)
+                    transform.localScale = t2.CurrentValue;
             }, (t2) =>
                 {
                     // completion
                     TweenScaleUp();
-            });
+                });
         });
     }
 }
