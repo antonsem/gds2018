@@ -8,24 +8,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4d196f9fda4a93e40b5e492176ff894d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playground_1_Anton.unity
     guid: e638270b088a4724b94ec8cbc10df1c8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playground_2.unity
     guid: 890706589671e0b4281526ec2e811612
   - enabled: 1
     path: Assets/Scenes/Level_1_Learning_the_Ropes.unity
     guid: 08d265462a0ae684c8540ab6b86fcd5c
   - enabled: 1
-    path: Assets/Scenes/Level_3_Death_is_My_Friend.unity
+    path: Assets/Scenes/Level_2_Death_is_My_Friend.unity
     guid: 2d878ec06410cc846876c84082e44723
   - enabled: 1
     path: Assets/Scenes/Hovering_block_level.unity
     guid: d29c36aba0628bc48b355c72cef90878
   - enabled: 1
-    path: Assets/Scenes/Level_2_Arachnophobia.unity
+    path: Assets/Scenes/Level_3_Arachnophobia.unity
     guid: 575015985b5c6764c874c1bf7590d03f
+  - enabled: 1
+    path: Assets/Scenes/Level_4_The_Power.unity
+    guid: a6c0bacc4aaf17a499c13e94bc493949
   - enabled: 1
     path: Assets/Scenes/Level_5_Where_is_My_Mind.unity
     guid: 488b047a9f619034184d50af51200dbb

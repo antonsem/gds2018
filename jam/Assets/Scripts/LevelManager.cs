@@ -41,7 +41,10 @@ public class LevelManager : Singleton<LevelManager>
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) && currentLevel)
+        {
+            Events.Instance.playerDied.Invoke(DeathType.Explode);
             ReloadLevel(() => UIManager.Instance.FadeIn(null), null);
+        }
     }
 
     private void SetCurrentLevel(LevelStateController level)
