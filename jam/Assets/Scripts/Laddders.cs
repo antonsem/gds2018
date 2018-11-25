@@ -35,10 +35,12 @@ public class Laddders : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Inledder = true;
+        player.GetComponent<AnimationController>().SetJump(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         Inledder = false;
+        player.GetComponent<AnimationController>().SetJump(false);
     }
 }
