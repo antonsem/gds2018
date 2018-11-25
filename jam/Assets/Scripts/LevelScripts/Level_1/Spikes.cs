@@ -21,7 +21,7 @@ public class Spikes : MonoBehaviour
     {
         if (!playerDead)
         {
-            Events.Instance.playerDied.Invoke(DeathType.Explode);
+            Events.Instance.playerDied.Invoke(DeathType.Impale);
             playerDead = true;
             Level1State.zoomCamera = true;
         }

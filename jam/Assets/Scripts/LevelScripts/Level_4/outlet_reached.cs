@@ -18,7 +18,7 @@ public class outlet_reached : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Events.Instance.playerDied.Invoke(DeathType.Explode);
+        Events.Instance.playerDied.Invoke(DeathType.Electricuted);
         StartCoroutine(CompleteLevel());
     }
 
