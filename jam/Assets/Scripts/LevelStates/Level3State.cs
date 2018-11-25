@@ -26,7 +26,7 @@ public class Level3State : LevelStateController
     {
         if (Spider.GetComponent<SpiderScript>().Bitted && !playerDead)
         {
-            Events.Instance.playerDied.Invoke(DeathType.Explode);
+            Events.Instance.playerDied.Invoke(DeathType.Spider);
             deadFrame = Time.frameCount;
             playerDead = true;
         }

@@ -23,7 +23,7 @@ public class outlet_reached : MonoBehaviour
         {
             if (virtualCamera.m_Lens.FieldOfView > 40)
             {
-                virtualCamera.m_Lens.FieldOfView -= 0.1f;
+                virtualCamera.m_Lens.FieldOfView -= 0.4f;
             }
         }
     }
