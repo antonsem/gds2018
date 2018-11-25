@@ -18,29 +18,14 @@ public class hanging_station : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        foreach (var contact in collision.contacts)
-        {
-            if (contact.collider.GetComponentInParent<PlayerInput>() != null)
-            {
-                Debug.Log(contact.collider.name);
-                Destroy(ground);
-                //Events.Instance.playerDied.Invoke(DeathType.Hang);
-                AllowPlayerToHang();
-                //StartCoroutine(CompleteLevel());
-            }
-        }
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "Player")
         {
             Destroy(ground);
-            Events.Instance.playerDied.Invoke(DeathType.Hang);
             AllowPlayerToHang();
-            //StartCoroutine(CompleteLevel());
+            StartCoroutine(StartDying());
+            StartCoroutine(CompleteLevel());
         }
     }
 
@@ -49,6 +34,7 @@ public class hanging_station : MonoBehaviour
         Rigidbody2D rigidbody2D = player.GetComponent<Rigidbody2D>();
         rigidbody2D.freezeRotation = false;
         rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        rigidbody2D.mass = 20;
 
         player.GetComponent<Gravity>().useGravity = false;
 
@@ -57,11 +43,20 @@ public class hanging_station : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         player.GetComponent<BoxCollider2D>().enabled = false;
         player.GetComponent<PhysicalObject>().enabled = false;
+
+        foreach (GameObject rope_piece in GameObject.FindGameObjectsWithTag("Rope"))
+            rope_piece.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     IEnumerator CompleteLevel()
     {
-        yield return new WaitForSeconds(5.75f);
+        yield return new WaitForSeconds(8.75f);
         Events.Instance.levelCompleted.Invoke();
+    }
+
+    IEnumerator StartDying()
+    {
+        yield return new WaitForSeconds(0.95f);
+        Events.Instance.playerDied.Invoke(DeathType.Hang);
     }
 }
