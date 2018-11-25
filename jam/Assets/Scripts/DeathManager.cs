@@ -7,7 +7,8 @@ public enum DeathType
 {
     Explode,
     Impale,
-    Hang
+    Hang,
+    Electricuted
 }
 
 public class DeathManager : MonoBehaviour
@@ -58,6 +59,8 @@ public class DeathManager : MonoBehaviour
             Events.Instance.playerDied.Invoke(DeathType.Impale);
         if (Input.GetKeyDown(KeyCode.Alpha3))
             Events.Instance.playerDied.Invoke(DeathType.Hang);
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+            Events.Instance.playerDied.Invoke(DeathType.Electricuted);
     }
 #endif
 
@@ -78,6 +81,9 @@ public class DeathManager : MonoBehaviour
             case (DeathType.Hang):
                 anim.SetHang_Death();
                 DoHang();
+                break;
+            case (DeathType.Electricuted):
+                anim.SetElectricuted();
                 break;
             default:
                 Debug.Log("Exploded!");

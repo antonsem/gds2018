@@ -26,10 +26,10 @@ public class GameOverPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        if (UIManager.Instance.currentLevel)
+        if (LevelManager.Instance.currentLevel)
         {
-            levelName.text = UIManager.Instance.currentLevel.levelName;
-            tip.text = UIManager.Instance.currentLevel.tip;
+            levelName.text = LevelManager.Instance.currentLevel.levelName;
+            tip.text = LevelManager.Instance.currentLevel.tip;
         }
         video.Play();
         AudioManager.Instance.SetNormalizedMusicVolume(Settings.musicVolPercentage);
