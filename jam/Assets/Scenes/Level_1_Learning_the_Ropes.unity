@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &130486169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2735353184331501884, guid: 9e17f04ced5f1194cbd5ef7781a1f9f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 513238547}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &513238547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,7 +144,7 @@ PrefabInstance:
     - target: {fileID: 2735353184331501885, guid: 9e17f04ced5f1194cbd5ef7781a1f9f4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7582946
+      value: 4.569294
       objectReference: {fileID: 0}
     - target: {fileID: 2735353184331501885, guid: 9e17f04ced5f1194cbd5ef7781a1f9f4,
         type: 3}
@@ -339,9 +351,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicVolPercentage: 0.6
+  sfxVolPercentage: 1
   levelName: 
   nextLevelName: Level_2_Arachnophobia
   tip: 
+  SpikesArea: {fileID: 1406628022}
+  virtualCamera: {fileID: 130486169}
 --- !u!1 &1406628022
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,8 +367,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1406628024}
   - component: {fileID: 1406628023}
+  - component: {fileID: 1406628025}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SpikesKillArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,12 +409,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406628022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.69, y: -7.13, z: 0.03125}
-  m_LocalScale: {x: 21.4411, y: 1.7765332, z: 1}
+  m_LocalPosition: {x: 26.69, y: -7.15, z: 0.03125}
+  m_LocalScale: {x: 21.4411, y: 1.9216512, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1406628025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406628022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d475802c64d634c840258b63fa2c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spiked: 0
 --- !u!1 &2027848153
 GameObject:
   m_ObjectHideFlags: 0

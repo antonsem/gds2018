@@ -27,7 +27,6 @@ public class Level1State : LevelStateController
     {
         if(SpikesArea.GetComponent<Spikes>().Spiked && !playerDead)
         {
-            player.GetComponent<PlayerInput>().enabled = false;
             Events.Instance.playerDied.Invoke(DeathType.Explode);
             deadFrame = Time.frameCount;
             playerDead = true;
