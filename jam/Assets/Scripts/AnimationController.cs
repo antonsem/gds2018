@@ -15,6 +15,7 @@ public class AnimationController : MonoBehaviour
     private int electricuted = Animator.StringToHash("Electricuted");
     private int trip = Animator.StringToHash("Trip");
     private int impale = Animator.StringToHash("Impaled");
+    private int spider = Animator.StringToHash("Spider");
     [SerializeField]
     private Animator anim;
 
@@ -84,6 +85,11 @@ public class AnimationController : MonoBehaviour
     public void SetImpaled()
     {
         anim.SetTrigger(impale);
+    }
+
+    public void SetSpider()
+    {
+        anim.SetTrigger(spider);
     }
 
     private void Reset()

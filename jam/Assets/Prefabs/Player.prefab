@@ -617,6 +617,8 @@ MonoBehaviour:
   screams:
   - {fileID: 8300000, guid: af10bcd52b28cdc498b58ad6f9535a84, type: 3}
   - {fileID: 8300000, guid: 5fff7fc2711a54a42841c196d3cfe97f, type: 3}
+  hang:
+  - {fileID: 8300000, guid: 0c04cb39db39caa4084933d1ae7d02b4, type: 3}
 --- !u!1 &8640666231245616862
 GameObject:
   m_ObjectHideFlags: 0

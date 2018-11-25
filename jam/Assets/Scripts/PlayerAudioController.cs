@@ -18,6 +18,8 @@ public class PlayerAudioController : MonoBehaviour
     private AudioClip[] electricutions;
     [SerializeField]
     private AudioClip[] screams;
+    [SerializeField]
+    private AudioClip[] hang;
 
     public void PlayFootStep()
     {
@@ -47,6 +49,11 @@ public class PlayerAudioController : MonoBehaviour
     public void PlayScream()
     {
         PlayFromList(screams);
+    }
+
+    public void PlayHang()
+    {
+        PlayFromList(hang);
     }
 
     public void PlayFromList(AudioClip[] list, float minPitch = 0.95f, float maxPitch = 1.05f)

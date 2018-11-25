@@ -9,7 +9,8 @@ public enum DeathType
     Impale,
     Hang,
     Electricuted,
-    Tripped
+    Tripped,
+    Spider
 }
 
 public class DeathManager : MonoBehaviour
@@ -69,13 +70,9 @@ public class DeathManager : MonoBehaviour
             Events.Instance.playerDied.Invoke(DeathType.Electricuted);
         if (Input.GetKeyDown(KeyCode.Alpha5))
             Events.Instance.playerDied.Invoke(DeathType.Tripped);
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+            Events.Instance.playerDied.Invoke(DeathType.Spider);
 
-        //if (hanged && head.transform.SetComponent(out Rigidbody2D rigid))
-        //{
-        //    rigid.AddForce(new Vector2(100, 100));
-        //    Debug.Log("Hanged!");
-        //    hanged = died = true;
-        //}
     }
 #endif
 
@@ -102,6 +99,9 @@ public class DeathManager : MonoBehaviour
                 break;
             case (DeathType.Tripped):
                 anim.SetTrip();
+                break;
+            case (DeathType.Spider):
+                anim.SetSpider();
                 break;
             default:
                 Debug.Log("Exploded!");
