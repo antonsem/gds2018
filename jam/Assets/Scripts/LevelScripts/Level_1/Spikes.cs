@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
+using System.Collections;
 using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
-    public bool Spiked;
-
+    private bool playerDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,21 @@ public class Spikes : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigggggg");
-        Spiked = true;
+        if (!playerDead)
+        {
+            Events.Instance.playerDied.Invoke(DeathType.Explode);
+            playerDead = true;
+            Level1State.zoomCamera = true;
+        }
+
+        if (playerDead)
+        {
+            StartCoroutine(CompleteLevel());
+        }
+    }
+    IEnumerator CompleteLevel()
+    {
+        yield return new WaitForSeconds(2.0f);
+        Events.Instance.levelCompleted.Invoke();
     }
 }

@@ -9,9 +9,9 @@ public class Level1State : LevelStateController
 
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
 
-    private bool playerDead = false;
     private GameObject player;
-    private int deadFrame;
+
+    public static bool zoomCamera;
 
     private void Start()
     {
@@ -19,30 +19,14 @@ public class Level1State : LevelStateController
 
         if (SpikesArea == null)
         {
-            SpikesArea = GameObject.Find("SpikesArea");
+            SpikesArea = GameObject.Find("SpikesKillArea");
         }
     }
 
     private void Update()
     {
-        if(SpikesArea.GetComponent<Spikes>().Spiked && !playerDead)
-        {
-            Events.Instance.playerDied.Invoke(DeathType.Explode);
-            deadFrame = Time.frameCount;
-            playerDead = true;
-        }
-
-        if (playerDead)
-        {
-            if (Math.Abs(Time.frameCount - deadFrame) > 180)
-            {
-                Events.Instance.levelCompleted.Invoke();
-            }
-
+        if (zoomCamera)
             if (virtualCamera.m_Lens.FieldOfView > 30)
-            {
                 virtualCamera.m_Lens.FieldOfView -= 0.1f;
-            }
-        }
     }
 }
