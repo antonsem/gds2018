@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(PhysicalObject), typeof(AnimationController))]
 public class PlayerInput : MonoBehaviour, IUpdate
 {
-    public float speed = 10;
+    public float maxSpeed = 10;
     public float runCoefficient = 1.5f;
     public float dashDistance = 3;
     public float jumpSpeed = 100;
@@ -41,13 +41,19 @@ public class PlayerInput : MonoBehaviour, IUpdate
     private float horizontalInput = 0;
     private float verticalInput = 0;
     private float stickTime = 0;
+    private float speed = 0;
 
     private bool wallJump = false;
     private bool quitting = false;
 
     private void GetInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
+        if (physObj.velocity.x == 0)
+            speed = 0;
+
+        speed += (maxSpeed - speed) / maxSpeed / 2;
+        speed = Mathf.Min(maxSpeed, speed);
+        horizontalInput = Input.GetAxisRaw("Horizontal") * Mathf.Min(maxSpeed, speed) * Time.deltaTime;
         verticalInput = Input.GetAxisRaw("Vertical");
         if (inputLock > 0) return;
 
