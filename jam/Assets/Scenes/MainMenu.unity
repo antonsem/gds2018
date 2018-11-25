@@ -978,10 +978,6 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 1172504320}
-    - target: {fileID: 368073717, guid: c85c1e03b868af4478338c97725e6e7a, type: 3}
-      propertyPath: levels.Array.data[0]
-      value: Level_1_Learning_the_Ropes
-      objectReference: {fileID: 0}
     - target: {fileID: 2134027279496836064, guid: 80d8a3ab8893d1647b5e32a25367d252,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -1011,6 +1007,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 368073717, guid: c85c1e03b868af4478338c97725e6e7a, type: 3}
+      propertyPath: levels.Array.data[0]
+      value: Level_1_Learning_the_Ropes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80d8a3ab8893d1647b5e32a25367d252, type: 3}
@@ -1846,6 +1846,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Scripts
+      objectReference: {fileID: 0}
+    - target: {fileID: 368073717, guid: c85c1e03b868af4478338c97725e6e7a, type: 3}
+      propertyPath: levels.Array.data[0]
+      value: Level_1_Learning_the_Ropes
       objectReference: {fileID: 0}
     - target: {fileID: 5392812764048309623, guid: c85c1e03b868af4478338c97725e6e7a,
         type: 3}

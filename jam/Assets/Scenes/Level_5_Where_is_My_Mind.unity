@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39530898}
   - component: {fileID: 39530897}
+  - component: {fileID: 39530899}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -157,6 +158,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &39530899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39530896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32675211da4911743881e3c894c38bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicVolPercentage: 0.6
+  sfxVolPercentage: 1
+  clip: {fileID: 32900000, guid: ea8ecd3ca29f6414aa7b32f3db88c28d, type: 3}
+  levelName: 
+  nextLevelName: Level_1_Learning_the_Ropes
+  tip: 
 --- !u!1 &270926009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,8 +2277,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -23, y: -16, z: 0}
     second:
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -3338,8 +3357,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -1, y: -3, z: 0}
     second:
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -3518,8 +3537,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -1, y: 2, z: 0}
     second:
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -3832,9 +3851,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: fb76661108c97a240842addc9d4a2d2d, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 0662bbea57aeb5c4c92cd889338e1ff3, type: 2}
-  - m_RefCount: 352
+  - m_RefCount: 349
     m_Data: {fileID: 11400000, guid: a1bead984718e3c4fa92606a2ec1f63b, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 70c75c04550b454478cb4cb23452ab72, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: ee9a0a9555656c84d9b29b29130161d0, type: 2}
@@ -3847,9 +3866,9 @@ Tilemap:
     m_Data: {fileID: 21300006, guid: 1622c8653ec5093458e8d7edfaab2635, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300010, guid: 1622c8653ec5093458e8d7edfaab2635, type: 3}
-  - m_RefCount: 352
+  - m_RefCount: 349
     m_Data: {fileID: 21300024, guid: 1622c8653ec5093458e8d7edfaab2635, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 8
     m_Data: {fileID: 21300000, guid: 1622c8653ec5093458e8d7edfaab2635, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 21300004, guid: 1622c8653ec5093458e8d7edfaab2635, type: 3}
@@ -3910,6 +3929,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: VCam
       objectReference: {fileID: 0}
+    - target: {fileID: 2735353184331501884, guid: 9e17f04ced5f1194cbd5ef7781a1f9f4,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1259744638}
+    - target: {fileID: 2735353184331501884, guid: 9e17f04ced5f1194cbd5ef7781a1f9f4,
+        type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2735353184331501885, guid: 9e17f04ced5f1194cbd5ef7781a1f9f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3964,16 +3993,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735353184331501884, guid: 9e17f04ced5f1194cbd5ef7781a1f9f4,
-        type: 3}
-      propertyPath: m_Follow
-      value: 
-      objectReference: {fileID: 1259744638}
-    - target: {fileID: 2735353184331501884, guid: 9e17f04ced5f1194cbd5ef7781a1f9f4,
-        type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e17f04ced5f1194cbd5ef7781a1f9f4, type: 3}

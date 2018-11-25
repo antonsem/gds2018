@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level2State : LevelStateController
+public class Level5State : LevelStateController
 {
 }

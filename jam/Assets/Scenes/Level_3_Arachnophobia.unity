@@ -609,8 +609,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicVolPercentage: 0.6
   sfxVolPercentage: 1
+  clip: {fileID: 32900000, guid: ff63625be1daf804c8b0fb601a39970e, type: 3}
   levelName: 
-  nextLevelName: Level_3_Death_is_My_Friend
+  nextLevelName: Level_4_The_Power
   tip: 
   Spider: {fileID: 0}
   virtualCamera: {fileID: 733815889}

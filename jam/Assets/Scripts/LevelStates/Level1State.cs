@@ -26,7 +26,11 @@ public class Level1State : LevelStateController
     private void Update()
     {
         if (zoomCamera)
+        {
             if (virtualCamera.m_Lens.FieldOfView > 30)
+            {
                 virtualCamera.m_Lens.FieldOfView -= 0.1f;
+            }
+        }
     }
 }
