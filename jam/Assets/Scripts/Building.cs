@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -37,9 +38,14 @@ public class Building : MonoBehaviour
         {
             var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = transform.position.z;
+            //Debug.Log("cam: " + GameObject.Find("VCam").transform.position + " aaa " + transform.position +" local: " + transform.position +  " d " + (transform.position - mousePosition) + " i " + Input.mousePosition + " a " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
-            rigidbody2DComponent.velocity = -(transform.position - mousePosition);
-            Debug.Log(-(transform.position - mousePosition));
+            var centerScreen = new Vector3(Camera.main.pixelWidth/2, Camera.main.pixelHeight/2, transform.position.z);
+            Debug.Log(centerScreen + " mou " + Input.mousePosition);
+
+            //+Input.mousePosition - centerScreen
+
+            rigidbody2DComponent.velocity = -(transform.position -(mousePosition ));
         }
     }
 
@@ -55,11 +61,14 @@ public class Building : MonoBehaviour
 
     void OnMouseDown()
     {
+        Debug.Log("down");
+        //rigidbody2DComponent.velocity = new Vector2(0, 100);
         StartBuilding();
     }
 
     void OnMouseUp()
     {
+        Debug.Log("up");
         EndBuilding();
     }
 
@@ -96,7 +105,27 @@ public class Building : MonoBehaviour
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
-        var playerPosition = Player.transform.position;
+        Vector3 playerPosition = default;
+        try
+        {
+            playerPosition = Player.transform.position;
+        }
+        catch (MissingReferenceException)
+        {
+            Player = GameObject.Find("Player");
+            playerPosition = Player.transform.position;
+        }
+        catch (UnassignedReferenceException)
+        {
+            Player = GameObject.Find("Player");
+            playerPosition = Player.transform.position;
+        }
+        catch (NullReferenceException)
+        {
+            Player = GameObject.Find("Player");
+            playerPosition = Player.transform.position;
+        }
+
         playerPosition.z = 0;
 
         var delta = (mousePosition - playerPosition);

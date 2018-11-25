@@ -1,33 +1,47 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Level2State : LevelStateController
 {
-    private GameObject player;
+    public GameObject Spider;
 
-    private bool timeComes = false;
-    private float dieTime = 10;
+    private int deadFrame;
+
+    public Cinemachine.CinemachineVirtualCamera virtualCamera;
+
+    private bool playerDead = false;
 
     private void Start()
     {
-        player = GameObject.Find("Player");
+        if (Spider == null)
+        {
+            Spider = GameObject.Find("Spider");
+        }
     }
 
     private void Update()
     {
-        // After tuch spider you die
-        if (timeComes)
+        if (Spider.GetComponent<SpiderScript>().Bitted && !playerDead)
         {
             Events.Instance.playerDied.Invoke(DeathType.Explode);
-            Events.Instance.levelCompleted.Invoke();
+            deadFrame = Time.frameCount;
+            playerDead = true;
         }
 
-        dieTime -= Time.deltaTime;
-        if (dieTime < 0)
-        {
-            Events.Instance.playerDied.Invoke(DeathType.Explode);
-            Events.Instance.levelCompleted.Invoke();
+        if(playerDead)
+        { 
+            if (Math.Abs(Time.frameCount - deadFrame) > 250)
+            {
+                Events.Instance.levelCompleted.Invoke();
+            }
+            
+            if(virtualCamera.m_Lens.FieldOfView > 40)
+            {
+                virtualCamera.m_Lens.FieldOfView -= 0.1f;
+            }
         }
     }
 }
