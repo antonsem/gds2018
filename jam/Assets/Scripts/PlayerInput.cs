@@ -19,6 +19,8 @@ public class PlayerInput : MonoBehaviour, IUpdate
     public bool edgeGrab = true;
     public bool wallSlide = true;
 
+    public bool Dashable = false;
+
     [SerializeField]
     private PhysicalObject physObj;
     [SerializeField]
@@ -59,7 +61,7 @@ public class PlayerInput : MonoBehaviour, IUpdate
         verticalInput = Input.GetAxisRaw("Vertical");
         if (inputLock > 0) return;
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && horizontalInput != 0)
+        if (Dashable && Input.GetKeyDown(KeyCode.LeftShift) && horizontalInput != 0)
         {
             Dash(Mathf.Sign(horizontalInput));
             return;
@@ -74,7 +76,7 @@ public class PlayerInput : MonoBehaviour, IUpdate
         if (!hook.activeSelf || physObj.isGrounded)
             physObj.velocity.x = horizontalInput * (Input.GetKey(KeyCode.LeftControl) ? runCoefficient : 1);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             if (--jumpCount >= 0 || physObj.isGrounded || isHooked)
             {
