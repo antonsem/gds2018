@@ -201,6 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738047935}
   - component: {fileID: 738047936}
+  - component: {fileID: 738047937}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
@@ -270,6 +271,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &738047937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738047934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0154024facaa1574e9f9f1a48714e02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1210926604 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8640666231237155400, guid: e00b99e81b74bd445ad4b0152c4bfa8e,
@@ -433,6 +446,7 @@ GameObject:
   - component: {fileID: 1493319298}
   - component: {fileID: 1493319297}
   - component: {fileID: 1493319296}
+  - component: {fileID: 1493319299}
   m_Layer: 0
   m_Name: Outlet
   m_TagString: Untagged
@@ -450,7 +464,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -535,6 +549,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1493319299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493319295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de41470d449255b44a5078ca79155470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &2027848153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,12 +1474,12 @@ PrefabInstance:
     - target: {fileID: 7076976605238103987, guid: ea0958965d9147746a5fd39b5dc3ac70,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.94
+      value: -1.89
       objectReference: {fileID: 0}
     - target: {fileID: 7076976605238103987, guid: ea0958965d9147746a5fd39b5dc3ac70,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.91
+      value: 3.21
       objectReference: {fileID: 0}
     - target: {fileID: 7076976605238103987, guid: ea0958965d9147746a5fd39b5dc3ac70,
         type: 3}
@@ -1498,6 +1525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076976605238103985, guid: ea0958965d9147746a5fd39b5dc3ac70,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea0958965d9147746a5fd39b5dc3ac70, type: 3}
