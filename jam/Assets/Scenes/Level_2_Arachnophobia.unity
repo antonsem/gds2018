@@ -341,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: 
   tip: 
-  nextLevelName: 
+  nextLevelName: Level_3_Death_is_My_Friend
 --- !u!1839735485 &1390270022
 Tilemap:
   m_ObjectHideFlags: 0
