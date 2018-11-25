@@ -9,23 +9,38 @@ public class PlayerAudioController : MonoBehaviour
     [SerializeField]
     private AudioClip[] footSteps;
     [SerializeField]
+    private AudioClip[] jumps;
+    [SerializeField]
+    private AudioClip[] lands;
+    [SerializeField]
     private AudioClip[] explosions;
 
     public void PlayFootStep()
     {
-        if (footSteps != null && footSteps.Length > 0)
-        {
-            source.pitch = Random.Range(0.95f, 1.05f);
-            source.PlayOneShot(footSteps[Random.Range(0, footSteps.Length - 1)]);
-        }
+        PlayFromList(footSteps);
     }
 
     public void PlayExplosion()
     {
-        if (explosions != null && explosions.Length > 0)
+        PlayFromList(explosions);
+    }
+
+    public void PlayJump()
+    {
+        PlayFromList(jumps);
+    }
+
+    public void PlayLand()
+    {
+        PlayFromList(lands);
+    }
+
+    public void PlayFromList(AudioClip[] list, float minPitch = 0.95f, float maxPitch = 1.05f)
+    {
+        if (list != null && list.Length > 0)
         {
-            source.pitch = Random.Range(0.95f, 1.05f);
-            source.PlayOneShot(explosions[Random.Range(0, explosions.Length - 1)]);
+            source.pitch = Random.Range(minPitch, maxPitch);
+            source.PlayOneShot(list[Random.Range(0, list.Length - 1)]);
         }
     }
 }

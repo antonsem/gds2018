@@ -494,7 +494,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.07929438}
+  m_Offset: {x: 0, y: -0.115}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -505,7 +505,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29, y: 0.7085887}
+  m_Size: {x: 0.2398105, y: 0.7659482}
   m_EdgeRadius: 0
 --- !u!114 &8640666231237155415
 MonoBehaviour:
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3bd4ae24426b944b2f24decb96ece5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  maxSpeed: 10
   runCoefficient: 1.5
   dashDistance: 3
   jumpSpeed: 0.25
@@ -625,6 +625,7 @@ MonoBehaviour:
   physObj: {fileID: 8640666231237155415}
   gravity: {fileID: 8640666231237155411}
   anim: {fileID: 5311229844377231617}
+  audio: {fileID: 966014558871329114}
   hook: {fileID: 8640666231202616865}
   upperHand: {fileID: 8640666231649842595}
   lowerHand: {fileID: 8640666232245175537}
@@ -687,7 +688,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 204091887746454879}
-  footSteps: []
+  footSteps:
+  - {fileID: 8300000, guid: 82ef5eae05631c0468ca456c0693345c, type: 3}
+  jumps:
+  - {fileID: 8300000, guid: d41c4ed6fb9900748951aafa81de4120, type: 3}
+  lands:
+  - {fileID: 8300000, guid: 0bf10fc0d19c8a240aeb8522492ea553, type: 3}
   explosions:
   - {fileID: 8300000, guid: fe471d37dcf658043b9ee4c5e8857380, type: 3}
 --- !u!1 &8640666231245616862

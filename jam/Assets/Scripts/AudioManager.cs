@@ -5,6 +5,10 @@ using UnityEngine.Audio;
 public class AudioManager : Singleton<AudioManager>
 {
     [SerializeField]
+    private AudioSource musicSource;
+    [SerializeField]
+    private AudioSource sfxSource;
+    [SerializeField]
     private AudioMixer mixer;
     private IEnumerator volCoroutine = null;
 
@@ -69,11 +73,8 @@ public class AudioManager : Singleton<AudioManager>
         mixer.SetFloat(volName, vol);
     }
 
-    private void Update()
+    public void PlaySFX(AudioClip clip)
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            SetMusicVolume(-50);
-        if (Input.GetKeyDown(KeyCode.E))
-            SetMusicVolume(0);
+        sfxSource.PlayOneShot(clip);
     }
 }

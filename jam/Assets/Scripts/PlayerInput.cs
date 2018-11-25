@@ -26,6 +26,8 @@ public class PlayerInput : MonoBehaviour, IUpdate
     [SerializeField]
     private AnimationController anim;
     [SerializeField]
+    private PlayerAudioController audio;
+    [SerializeField]
     private GameObject hook;
     [SerializeField]
     private Hand upperHand;
@@ -77,6 +79,7 @@ public class PlayerInput : MonoBehaviour, IUpdate
             if (--jumpCount >= 0 || physObj.isGrounded || isHooked)
             {
                 physObj.velocity.y = jumpSpeed;
+                audio.PlayJump();
             }
             if (sliding && physObj.velocity.y < 0 && wallJump)
             {

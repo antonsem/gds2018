@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelStateController : MonoBehaviour
 {
-    public float musicVolPercentage = 0.25f;
+    public float musicVolPercentage = 0.6f;
     public string levelName;
     public string nextLevelName;
     [TextArea(10, 100)]

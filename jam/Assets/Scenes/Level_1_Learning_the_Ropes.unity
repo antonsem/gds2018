@@ -211,7 +211,7 @@ PrefabInstance:
     - target: {fileID: 8640666231237155412, guid: e00b99e81b74bd445ad4b0152c4bfa8e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 4.811
       objectReference: {fileID: 0}
     - target: {fileID: 8640666231237155412, guid: e00b99e81b74bd445ad4b0152c4bfa8e,
         type: 3}
@@ -338,9 +338,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2588d9bfb8e0f1a4ca0ad9f24e8799cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicVolPercentage: 0.6
   levelName: 
-  tip: 
   nextLevelName: Level_2_Arachnophobia
+  tip: 
 --- !u!1 &2027848153
 GameObject:
   m_ObjectHideFlags: 0
