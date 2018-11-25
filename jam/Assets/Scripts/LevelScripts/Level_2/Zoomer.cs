@@ -6,6 +6,8 @@ public class Zoomer : MonoBehaviour
 {
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
 
+    public float ZoomTo = 45f;
+
     public bool zoomingIn;
 
     void Start()
@@ -17,7 +19,7 @@ public class Zoomer : MonoBehaviour
     {
         if (zoomingIn)
         {
-            if (virtualCamera.m_Lens.FieldOfView > 45)
+            if (virtualCamera.m_Lens.FieldOfView > ZoomTo)
             {
                 virtualCamera.m_Lens.FieldOfView -= 0.4f;
             }
