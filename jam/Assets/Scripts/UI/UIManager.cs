@@ -11,7 +11,9 @@ public enum Panel
     LevelCompleted,
     Loading,
     MainMenu,
-    Fade
+    Fade,
+    Options,
+    Credits
 }
 
 public class UIManager : Singleton<UIManager>
@@ -28,6 +30,10 @@ public class UIManager : Singleton<UIManager>
     private LevelCompletePanel levelCompletePanel;
     [SerializeField]
     private FadePanel fadePanel;
+    [SerializeField]
+    private OptionsPanel optionsPanel;
+    [SerializeField]
+    private CreditsPanel creditsPanel;
 
     private void SetCurrentLevel(LevelStateController level)
     {
@@ -61,6 +67,8 @@ public class UIManager : Singleton<UIManager>
         mainMenuPanel.gameObject.SetActive(type == Panel.MainMenu);
         gameOverPanel.gameObject.SetActive(type == Panel.GameOver);
         levelCompletePanel.gameObject.SetActive(type == Panel.LevelCompleted);
+        optionsPanel.gameObject.SetActive(type == Panel.Options);
+        creditsPanel.gameObject.SetActive(type == Panel.Credits);
     }
 
     private void LevelFailed()
@@ -101,6 +109,8 @@ public class UIManager : Singleton<UIManager>
         gameOverPanel = FindObjectOfType<GameOverPanel>();
         levelCompletePanel = FindObjectOfType<LevelCompletePanel>();
         fadePanel = FindObjectOfType<FadePanel>();
+        optionsPanel = FindObjectOfType<OptionsPanel>();
+        creditsPanel = FindObjectOfType<CreditsPanel>();
     }
 
     private void OnApplicationQuit()
