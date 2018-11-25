@@ -76,6 +76,11 @@ public class LevelManager : Singleton<LevelManager>
 
     public void LoadLevel(string levelName, Action loadCallback, Action unloadCallback)
     {
+        if(levelName == mainSceneName)
+        {
+            LoadMainScene(() => UIManager.Instance.SetPanel(Panel.Credits));
+            return;
+        }
         StartCoroutine(LoadLevelCoroutine(levelName, loadCallback, unloadCallback));
     }
 

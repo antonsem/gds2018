@@ -50,6 +50,9 @@ public class PlayerInput : MonoBehaviour, IUpdate
     private bool wallJump = false;
     private bool quitting = false;
 
+    //dirty fix
+    public bool climbLadder = false;
+
     private void GetInput()
     {
         if (physObj.velocity.x == 0)
@@ -182,6 +185,12 @@ public class PlayerInput : MonoBehaviour, IUpdate
 
     private void SetAnimations()
     {
+        if(climbLadder)
+        {
+            anim.SetFall(0);
+            anim.SetWalk(0);
+            return;
+        }
         if (physObj.isGrounded)
         {
             anim.SetHang(false);

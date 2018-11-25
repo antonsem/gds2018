@@ -1,31 +1,26 @@
-﻿using System.Collections;
+using ExtraTools;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class trip_on_stone : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool tripped = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        foreach (var contact in collision.contacts)
+        if(collision.transform.SetComponent(out PlayerInput player))
         {
-            if (contact.collider.GetComponentInParent<PlayerInput>() != null)
-            {
-                Events.Instance.playerDied.Invoke(DeathType.Explode);
-                StartCoroutine(CompleteLevel());
-            }
+            Events.Instance.playerDied.Invoke(DeathType.Tripped);
+            StartCoroutine(CompleteLevel());
         }
+        //foreach (var contact in collision.contacts)
+        //{
+        //    if (contact.collider.GetComponentInParent<PlayerInput>() != null)
+        //    {
+                
+        //    }
+        //}
     }
 
     IEnumerator CompleteLevel()
